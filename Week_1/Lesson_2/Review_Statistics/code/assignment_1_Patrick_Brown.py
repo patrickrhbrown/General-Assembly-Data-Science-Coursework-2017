@@ -73,9 +73,15 @@ def get_mode(lst):
 
     Do not use scs.mode().
     """
-    m = max([lst.count(val) for val in lst])
-    return [x for x in lst if val.count(x) == m][0] if m>1 else None
 
+    modal_dict = {}
+    count = 0
+    for value in lst:
+        if value in modal_dict[values]:
+            modal_dict[values] += 1
+        else:
+            modal_dict[values] = 1
+    
     pass
 
 
