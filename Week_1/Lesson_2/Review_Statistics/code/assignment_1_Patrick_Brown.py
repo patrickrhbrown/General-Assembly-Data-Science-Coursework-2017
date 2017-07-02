@@ -82,6 +82,7 @@ def get_mode(lst):
         else:
             modal_dict[values] = 1"""
 
+<<<<<<< HEAD
     frequencies = {}
     mx = None
     for value in lst:
@@ -95,6 +96,8 @@ def get_mode(lst):
       mode = mx[0]
       return(float(mode))
 
+=======
+>>>>>>> 0084a28bf09796208ee329c0afbd5efe71a301f8
     pass
 
 
@@ -163,6 +166,7 @@ def remove_outliers(lst):
     #we assign the result of subtracting the 75th percentile
     #from the 25th percentile and assign it to the variable IQR
     IQR = seventy_five - twenty_five
+<<<<<<< HEAD
     three_times_IQR = 3 * IQR
     amend_lst = lst
     for item[i] in amend_lst:
@@ -171,6 +175,16 @@ def remove_outliers(lst):
         if item[i] > three_times_IQR:
             item[i].remove(amend_lst)
         return(amend_lst)
+=======
+    upper_limit = seventy_five
+    lower_limit = twenty_five
+    lst_c = lst
+    for i in lst_c:
+        if any > (3 * IQR) or any < (IQR / 3):
+            lst_c.remove(i)
+    return(lst_c)
+
+>>>>>>> 0084a28bf09796208ee329c0afbd5efe71a301f8
     pass
 
 
