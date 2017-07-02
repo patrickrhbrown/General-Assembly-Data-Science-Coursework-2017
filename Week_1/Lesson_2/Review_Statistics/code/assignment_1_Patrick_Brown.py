@@ -74,14 +74,14 @@ def get_mode(lst):
     Do not use scs.mode().
     """
 
-    modal_dict = {}
+    """modal_dict = {}
     count = 0
     for value in lst:
         if value in modal_dict[values]:
             modal_dict[values] += 1
         else:
-            modal_dict[values] = 1
-    
+            modal_dict[values] = 1"""
+
     pass
 
 
@@ -149,11 +149,14 @@ def remove_outliers(lst):
     #we assign the result of subtracting the 75th percentile
     #from the 25th percentile and assign it to the variable IQR
     IQR = seventy_five - twenty_five
-    final_list = lst.sort
-    final_list = [x for x in lst if (x > 3 * IQR)]
-    final_list = [x for x in final_list if (x < 3 * IQR)]
-    final_list_sorted = final_list.sort
-    return(final_list_sorted)
+    upper_limit = seventy_five
+    lower_limit = twenty_five
+    lst_c = lst
+    for i in lst_c:
+        if any > (3 * IQR) or any < (IQR / 3):
+            lst_c.remove(i)
+    return(lst_c)
+
     pass
 
 

@@ -27,8 +27,6 @@ Brief recap: notice the `if __name__ == '__main__':` block in the `.py` file. Th
   Which summary metric would you choose to best describe datasets 1 to 3?
 
   YOUR ANSWER:
-  
-  
 	Dataset_1: in this case, the mean would be a helpful statistic with a view to understanding the 'typical' car price within the price range. 
 	Dataset_2: the mean would not be appropriate in this case. If the Audi 8L is signficantly higher in value than the affordable cars in the price range, it would drag the mean of the rest of lower values towards it and give an overall misleading impression of the average price.  The median would give an appreciation of the car price in the middle of the range, and would serve to lluminate that difference between 'sensible' and 'dream car'.
 	Dataset_3: given that on Craigslist, it would be helpful to have an idea of the range of values within the price range, the mode would be a suitable choice since it would flag the frequency of values across car types if organised by price.  The mode would help to avoid some of the distortions that come from a) mixed old and new cars and b) the possible 'error' that accompanies the seller-sets-the-price model of peer to peer selling, and most importantly help to make sense of it.
@@ -41,17 +39,17 @@ Dataset\_1
 
 How are range and interquartile range similar? How are they different?
 
-  YOUR ANSWER: \_The range and the interquartile range are both ways to obtain an idea of a dataset's spread or dispersion, pemitting us to see how much the data varies.  Interquartile range offers us a means to get a stronger take on the structure of the data, since it affords us an initial estimate of outliers by quickly assessing whether values lie 1.5 times IQR below or above the first and third quartile respectively.  Comparing the IQR to the median, we can also detect skewness in the data (a higher proportion of lower or higher values).
+  YOUR ANSWER: _The range and the interquartile range are both ways to obtain an idea of a dataset's spread or dispersion, permitting us to see how much the data varies.  Interquartile range offers us a means to get a stronger take on the structure of the data, since it affords us an initial estimate of outliers by quickly assessing whether values lie 1.5 times IQR below or above the first and third quartile respectively.  Comparing the IQR to the median, we can also detect skewness in the data (a higher proportion of lower or higher values)._
   
-The range tells us in general how well the central tendency represents the data.  A large range suggests the central tendency is not as representative of the data as it would be if the range was small.  As the range measures the difference between the largest and smallest values in a dataset, it is more sensitive to outliers in the data than the IQR.
+_The range tells us in general how well the central tendency represents the data.  A large range suggests the central tendency is not as representative of the data as it would be if the range was small.  As the range measures the difference between the largest and smallest values in a dataset, it is more sensitive to outliers in the data than the IQR._
 
-If there are outliers in your dataset, how do you decide if you are going to ignore them or keep them in your analysis?
+_If there are outliers in your dataset, how do you decide if you are going to ignore them or keep them in your analysis?_
 
-  YOUR ANSWER: \_For modest datasets, conventional approaches to exclusion are that outliers that are beyond around 1.5 times IQR or more above or below the IQR should be at least probed further.  The question as to what to do with them really depends on the context at hand. If you are seeking an underserved market in an already dominated market place and you discover a series of customers that are not currently being serviced by an offering that fits them, these outliers might be a serendipitous find.  A first step should be to determine if such outliers represent erroneous or highly improbable data using judgement and reasoning, and such values can arguably be removed.  However, if values are being removed to simply fit a model, this runs the risk of overfitting.
+  YOUR ANSWER: _For modest-size datasets, conventional approaches to exclusion are that outliers that are beyond around 1.5 times IQR or more above or below the IQR should be at least probed further.  The question as to what to do with them really depends on the context at hand. If you are seeking an underserved market in an already-dominated market place and you discover a series of customers that are not currently being serviced by an offering that fits them, these outliers might be a serendipitous find.  A first step should be to determine if such outliers represent erroneous or highly improbable data using judgement and reasoning, and such values can arguably be removed.  However, if values are being removed to simply fit a model, this runs the risk of overfitting._
 
-In 'big' data sets, adjusting for an optimal approach toward variance vs bias becomes a parameter simply to be managed.  Again, judgement comes into play.  Certainly, in a technique such as linear regression, which seeks to minimise the residual sum of squares, outliers will skew results.  Yet their exclusion, if entirely valid data, could present a misleading impression of the validity/reliability of the model.
+_In 'big' data sets, adjusting for an optimal approach toward variance vs bias becomes a parameter simply to be managed.  Again, judgement comes into play.  Certainly, in a technique such as linear regression, which seeks to minimise the residual sum of squares, outliers will skew results.  Yet their exclusion, if entirely valid data, could present a misleading impression of the validity/reliability of the model._
 
-In both circumstances, the mantra of reproducibility and scientific method dictates that we should record how and why any outliers are excluded from consideration.
+_In both circumstances, the mantra of reproducibility and scientific method dictates that we should record how and why any outliers are excluded from consideration._
   
 
 ---- 
