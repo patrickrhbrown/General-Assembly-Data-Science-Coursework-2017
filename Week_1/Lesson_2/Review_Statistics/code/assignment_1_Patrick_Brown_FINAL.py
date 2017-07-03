@@ -74,30 +74,7 @@ def get_mode(lst):
     Do not use scs.mode().
     """
 
-    """modal_dict = {}
-    count = 0
-    for value in lst:
-        if value in modal_dict[values]:
-            modal_dict[values] += 1
-        else:
-            modal_dict[values] = 1"""
-
-<<<<<<< HEAD
-    frequencies = {}
-    mx = None
-    for value in lst:
-        if value in frequencies:
-            frequencies[value] += 1
-        else:
-            frequencies[value] = 1
-    if not mx or frequencies[value] > mx[1]:
-      mx = (value, frequencies[value])
-
-      mode = mx[0]
-      return(float(mode))
-
-=======
->>>>>>> 0084a28bf09796208ee329c0afbd5efe71a301f8
+    return max(set(lst), key=lst.count)
     pass
 
 
@@ -161,30 +138,17 @@ def remove_outliers(lst):
     list, sorted lst with any data points 3 interquartile range below Q1
     (25th percentile) or 3 interquartile range above Q3 (75th percentile)
     """
-
+    copy_lst = lst
     twenty_five,seventy_five = np.percentile(lst,[25,75])
     #we assign the result of subtracting the 75th percentile
     #from the 25th percentile and assign it to the variable IQR
     IQR = seventy_five - twenty_five
-<<<<<<< HEAD
-    three_times_IQR = 3 * IQR
-    amend_lst = lst
-    for item[i] in amend_lst:
-        if item[i] < three_times_IQR:
-            item[i].remove(amend_lst)
-        if item[i] > three_times_IQR:
-            item[i].remove(amend_lst)
-        return(amend_lst)
-=======
-    upper_limit = seventy_five
-    lower_limit = twenty_five
-    lst_c = lst
-    for i in lst_c:
-        if any > (3 * IQR) or any < (IQR / 3):
-            lst_c.remove(i)
-    return(lst_c)
+    three_times_IQR = int(seventy_five + 3 * IQR)
+    IQR_div_three = int(twenty_five - IQR * 3) #have used conventional Q1 - 3 * IQR here
+    outlier_lst = [] #create an empty list
+    lst = [outlier_lst.append(s) for s in copy_lst if s < three_times_IQR and s > IQR_div_three]
+    return(sorted(outlier_lst))
 
->>>>>>> 0084a28bf09796208ee329c0afbd5efe71a301f8
     pass
 
 

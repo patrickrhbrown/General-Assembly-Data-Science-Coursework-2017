@@ -27,15 +27,16 @@ Brief recap: notice the `if __name__ == '__main__':` block in the `.py` file. Th
   Which summary metric would you choose to best describe datasets 1 to 3?
 
   YOUR ANSWER:
-	Dataset_1: in this case, the mean would be a helpful statistic with a view to understanding the 'typical' car price within the price range. 
-	Dataset_2: the mean would not be appropriate in this case. If the Audi 8L is signficantly higher in value than the affordable cars in the price range, it would drag the mean of the rest of lower values towards it and give an overall misleading impression of the average price.  The median would give an appreciation of the car price in the middle of the range, and would serve to lluminate that difference between 'sensible' and 'dream car'.
-	Dataset_3: given that on Craigslist, it would be helpful to have an idea of the range of values within the price range, the mode would be a suitable choice since it would flag the frequency of values across car types if organised by price.  The mode would help to avoid some of the distortions that come from a) mixed old and new cars and b) the possible 'error' that accompanies the seller-sets-the-price model of peer to peer selling, and most importantly help to make sense of it.
+	Dataset_1: the mean.
+	Dataset_2:  the median.
+	Dataset_3: the mode.
  YOUR EXPLANATION:
 
-Dataset\_1 
+_Dataset\_1 :  The mean would be a helpful statistic with a view to understanding the 'typical' car price within the price range.   This is because you will wish to know the likely ballpark figure of what you can afford and so you know what you will wish to spend. _
+_Dataset 2: the mean would not be appropriate in this case. If the Audi 8L is significantly higher in value than the affordable cars in the price range, it would drag the mean of the rest of lower values towards it and give an overall misleading impression of the average price.  The median would give an appreciation of the car price in the middle of the range, and would serve to illuminate that difference between 'sensible' and 'dream car'. 
+_Dataset 3: given that on Craigslist, it would be helpful to have an idea of the range of values within the price range, the mode would be a suitable choice since it would flag the frequency of values organised by price (even if multimodal).  The mode would help to avoid some of the distortions that come from a) mixed old and new cars and b) the possible 'error' that accompanies the seller-sets-the-price model of peer to peer selling, and most importantly help to make sense of it._
 
-2. Range vs interquartile range
-  Fill in the functions `get_range`, `get_IQR`, and `remove_outliers` in [assignment\_1.py][3]. Look up how to use `np.percentile`.
+2. Range vs interquartile range Fill in the functions `get_range`, `get_IQR`, and `remove_outliers` in [assignment\_1.py][3]. Look up how to use `np.percentile`.
 
 How are range and interquartile range similar? How are they different?
 
@@ -49,7 +50,7 @@ _If there are outliers in your dataset, how do you decide if you are going to ig
 
 _In 'big' data sets, adjusting for an optimal approach toward variance vs bias becomes a parameter simply to be managed.  Again, judgement comes into play.  Certainly, in a technique such as linear regression, which seeks to minimise the residual sum of squares, outliers will skew results.  Yet their exclusion, if entirely valid data, could present a misleading impression of the validity/reliability of the model._
 
-_In both circumstances, the mantra of reproducibility and scientific method dictates that we should record how and why any outliers are excluded from consideration._
+_In both circumstances, the mantra of reproducibility and scientific method dictates that we should record how and why any outliers are excluded from consideration, but it is arguable that unless outliers represent errors and/or prevent the deployment of certain types of analysis, they should be retained_
   
 
 ---- 
