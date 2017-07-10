@@ -85,20 +85,10 @@ def get_sem(sample):
     - sem(FLOAT) [Standard Error Mean]
     """
 
-    """mean_value = sum(sample) / len(sample)
     n = len(sample) - 1
-    variance1 = sum([(i - mean_value)**2 for i in sample]) / n
-    return(variance1)
-
-    s_d = sqrt(variance1)
-    f = sqrt(len(sample))
-    sem = s_d / f
-    return(sem)"""
-
-    n = len(sample)
-    mean_value = sum(sample) / float(n)
+    mean_value = sum(sample) / float(len(sample))
     variance = sum([(i - mean_value)**2 for i in sample]) / n
-    sem = math.sqrt(variance) / math.sqrt(n)
+    sem = math.sqrt(variance) / math.sqrt(len(sample))
     return(sem)
 
     pass

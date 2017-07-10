@@ -22,6 +22,12 @@ def get_confidence_interval(sample, confidence=.95):
 
     Hint: use scs.t.ppf(percentile)
     """
+    sample = 1.0*sample
+    n = len(sample)
+    m, se = get_mean(sample), get_sem(sample)
+    error = se * scs.t.ppf((1+confidence)/2.,n-1)
+    return m, m-error, m+error
+
     pass
 
 
