@@ -58,7 +58,7 @@ def three():
          [24 25 26 27 28 29]
          [30 31 32 33 34 35]]
     '''
-    return None
+    return np.arange(0,36).reshape(6,6)
 
 
 
@@ -77,7 +77,7 @@ def four():
     >>> [[7 8 2]
          [9 4 3]]
     '''
-    return None
+    return np.random.randint(20, size=2,3)
 
 
 
@@ -98,7 +98,7 @@ def five():
          [ 0.  0.  0.  0.  1.  0.]
          [ 0.  0.  0.  0.  0.  1.]]
     '''
-    return None
+    return np.identity(6)
 
 
 
@@ -119,11 +119,11 @@ def six():
           [80 81 82 83 84 85 86 87 88 89]
           [90 91 92 93 94 95 96 97 98 99]]
     '''
-    return None
+    return np.arange(0,100).reshape(10,10)
 
 
 
-def seven():
+def seven(a = six()):
     '''
     INPUT: Matrix output from function six.
     OUTPUT:  First three columns of Matrix from function six.
@@ -146,11 +146,11 @@ def seven():
          [90 91 92]]
     '''
 
-    return None
+    return a[:,0:3]
 
 
 
-def eight():
+def eight(a=six()):
     '''
     INPUT: Matrix output from function six.
     OUTPUT:  Last two ROWS of Matrix from function six.
@@ -161,7 +161,7 @@ def eight():
     >>> [[80 81 82 83 84 85 86 87 88 89]
          [90 91 92 93 94 95 96 97 98 99]]
     '''
-    return None
+    return a[-2:,:]
 
 
 
@@ -176,9 +176,9 @@ def nine():
 
     Create this numpy array (called V): [ [0,1,2,3,4,5,6,7,8,9] ]
     '''
-    x = np.arange(0,10)
+    V = np.arange(0,10)
 
-    return x
+    return V
 
 
 
@@ -191,18 +191,18 @@ def ten(V):
     Do a scalar addition by 0.5 to V.
     '''
 
-    return np.add(x,0.5)
+    return np.add(V,0.5)
 
-def eleven(V):
+def eleven(V=nine()):
     '''
     INPUT: V (matrix from nine() )
     Do a scalar multiple by -2.
     OUTPUT:  [[  0  -2  -4  -6  -8 -10 -12 -14 -16 -18]]
     '''
-    return None
+    return np.multiply(V,-2.0)
 
 
-def twelve(V):
+def twelve(V=nine()):
     '''
     INPUT: V ( matrix from nine() )
     OUTPUT: answer = V+B
@@ -213,7 +213,9 @@ def twelve(V):
 
     Return your answer
     '''
-    return None
+    B = np.full((10,1), 0.5)
+
+    return V+B
 
 
 # PART 3: MATRIX / VECTOR Multiplication
@@ -245,7 +247,7 @@ def fourteen(column_vector=thirteen()[0], row_vector=thirteen()[1]):
 
 
 
-def fifteen(column_vector, row_vector, square_matrix):
+def fifteen(column_vector=thirteen()[0], row_vector=thirteen()[1], square_matrix=()[2]):
     '''
     INPUT: Using column_vector and row_vector from thirteen() as the inputs
     OUTPUT:  return c_answer, r_answer
@@ -262,16 +264,20 @@ def fifteen(column_vector, row_vector, square_matrix):
     Make sure you return c_answer first
     return c_answer, r_answer
     '''
+    c_answer = np.dot(square_matrix, column_vector)
+    r_answer = np.dot(row_vector,square_matrix)
 
-    return None, None
+    return c_answer, r_answer
 
 
 
-def sixteen(column_vector, row_vector):
+def sixteen(column_vector=thirteen()[0], row_vector=thirteen()[1]:
     '''
     Compute the dot product of row_vector and column_vector.
     '''
-    return None
+    dot_product = sum([column_vector[v,0]*row_vector[0,v])for v in range(len(column_vector))])
+
+    return dot_product
 
 
 
